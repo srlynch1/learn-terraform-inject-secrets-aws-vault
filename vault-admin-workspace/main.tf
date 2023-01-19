@@ -8,7 +8,9 @@ terraform {
   }
 }
 
-provider "vault" {}
+provider "vault" {
+  address = var.vault_server_url
+}
 
 resource "vault_aws_secret_backend" "aws" {
   access_key = var.aws_access_key
